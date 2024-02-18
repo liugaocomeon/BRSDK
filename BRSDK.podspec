@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "BRSDK"
-  spec.version      = "0.0.5"
+  spec.version      = "0.0.6"
   spec.summary      = "Bricks Royale iOS SDK."
 
   # This description is used to generate tags and improve search results.
@@ -109,7 +109,6 @@ Pod::Spec.new do |spec|
   # spec.resources = "Resources/*.png"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
-  spec.ios.vendored_frameworks = 'Framework/GrowingIO.framework'
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -131,6 +130,7 @@ Pod::Spec.new do |spec|
   #  you can include multiple dependencies to ensure it works.
 
   spec.requires_arc = true
+  spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   spec.dependency "GoogleSignIn"
