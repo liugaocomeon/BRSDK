@@ -1,0 +1,273 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name GrowingIO
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AdSupport
+import AdjustSdk
+import AppLovinSDK
+import AppTrackingTransparency
+import AuthenticationServices
+import CoreText
+import FBAudienceNetwork
+import FBSDKCoreKit
+import FBSDKLoginKit
+import FirebaseAnalytics
+import FirebaseCore
+import FirebaseMessaging
+import FirebaseRemoteConfig
+import Foundation
+import GoogleMobileAds
+import GoogleSignIn
+@_exported import GrowingIO
+import Helpshift
+import SensorsAnalyticsSDK
+import StoreKit
+import Swift
+import UIKit
+import UserNotifications
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers open class SwiftEventBus {
+  open class func post(_ name: Swift.String, sender: Any? = nil)
+  open class func post(_ name: Swift.String, sender: ObjectiveC.NSObject?)
+  open class func post(_ name: Swift.String, sender: Any? = nil, userInfo: [Swift.AnyHashable : Any]?)
+  open class func postToMainThread(_ name: Swift.String, sender: Any? = nil)
+  open class func postToMainThread(_ name: Swift.String, sender: ObjectiveC.NSObject?)
+  open class func postToMainThread(_ name: Swift.String, sender: Any? = nil, userInfo: [Swift.AnyHashable : Any]?)
+  @discardableResult
+  open class func on(_ target: Swift.AnyObject, name: Swift.String, sender: Any? = nil, queue: Foundation.OperationQueue?, handler: @escaping ((Foundation.Notification?) -> Swift.Void)) -> any ObjectiveC.NSObjectProtocol
+  @discardableResult
+  open class func onMainThread(_ target: Swift.AnyObject, name: Swift.String, sender: Any? = nil, handler: @escaping ((Foundation.Notification?) -> Swift.Void)) -> any ObjectiveC.NSObjectProtocol
+  @discardableResult
+  open class func onBackgroundThread(_ target: Swift.AnyObject, name: Swift.String, sender: Any? = nil, handler: @escaping ((Foundation.Notification?) -> Swift.Void)) -> any ObjectiveC.NSObjectProtocol
+  open class func unregister(_ target: Swift.AnyObject)
+  open class func unregister(_ target: Swift.AnyObject, name: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class StorageUtils {
+  public static func saveValue(key: Swift.String, value: Swift.AnyObject?)
+  public static func deleteValue(key: Swift.String?)
+  public static func getString(key: Swift.String) -> Swift.String?
+  public static func getInt(key: Swift.String) -> Swift.Int?
+  public static func getDouble(key: Swift.String) -> Swift.Double?
+  public static func getBool(key: Swift.String) -> Swift.Bool?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CarryModelManager {
+  public static let shared: GrowingIO.CarryModelManager
+  public func beijing_getInitResult(_ block: ((Swift.Bool, Swift.String) -> ()))
+  public func beijing_huoquPeizhi() -> GrowingIO.ConfigurationModel?
+  @objc deinit
+}
+public class ConfigurationModel : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class CommonTools {
+  public static func getVersionCode() -> Swift.Int
+  public static func getVersionName() -> Swift.String
+  public static func dicValueString(_ dic: [Swift.AnyHashable : Any]) -> Swift.String
+  public static func getJSONStringFromArray(array: [Any]) -> Swift.String
+  @objc deinit
+}
+@objc extension UIKit.UIGestureRecognizer {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var funcName: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func addAction(_ closure: @escaping (UIKit.UIGestureRecognizer) -> Swift.Void)
+}
+@objc extension UIKit.UITapGestureRecognizer {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func addAction(_ closure: @escaping (UIKit.UITapGestureRecognizer) -> Swift.Void)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func didTapLabelAttributedText(_ linkDic: [Swift.String : Swift.String], action: @escaping (Swift.String, Swift.String?) -> Swift.Void)
+  @objc @available(*, deprecated, message: "replace by didTapLabelAttributedText(_ linkDic: , action:)")
+  @_Concurrency.MainActor(unsafe) dynamic public func didTapAttributedTextIn(_ tapTexts: [Swift.String], action: @escaping (Swift.String, Swift.Int) -> Swift.Void)
+}
+public typealias View = UIKit.UIView
+public typealias StackView = UIKit.UIStackView
+public typealias Screen = UIKit.UIScreen
+public typealias Control = UIKit.UIControl
+public typealias Button = UIKit.UIButton
+public typealias Color = UIKit.UIColor
+public typealias Font = UIKit.UIFont
+public typealias Image = UIKit.UIImage
+public typealias EdgeInsets = UIKit.UIEdgeInsets
+public typealias CollectionViewFlowLayout = UIKit.UICollectionViewFlowLayout
+public typealias CollectionViewDelegateFlowLayout = UIKit.UICollectionViewDelegateFlowLayout
+public let kScreenWidth: CoreFoundation.CGFloat
+public let kScreenHeight: CoreFoundation.CGFloat
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func onClick(_ target: Any?, _ action: ObjectiveC.Selector?)
+}
+@objc extension UIKit.UIAlertController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var titleLabel: UIKit.UILabel? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var messageLabel: UIKit.UILabel? {
+    @objc get
+  }
+  @objc @discardableResult
+  @_Concurrency.MainActor(unsafe) dynamic public func addActionTitles(_ titles: [Swift.String]?, handler: ((UIKit.UIAlertController, UIKit.UIAlertAction) -> Swift.Void)? = nil) -> Self
+}
+@objc extension UIKit.UIView {
+  @objc @discardableResult
+  @_Concurrency.MainActor(unsafe) dynamic public func addGestureTap(_ action: @escaping ((UIKit.UITapGestureRecognizer) -> Swift.Void)) -> UIKit.UITapGestureRecognizer
+}
+@_hasMissingDesignatedInitializers public class ExtraEventReporter {
+  public static let shared: GrowingIO.ExtraEventReporter
+  public func logAdjustEvent(eventName: Swift.String, dict: Swift.Dictionary<Swift.String, Any>?)
+  public func reportADImpression(ad: AppLovinSDK.MAAd)
+  public func addRevenueToTotal001(currentRevenue: Swift.Double)
+  public func addRevenueToTotal(_ currentRevenue: Swift.Double)
+  public func logEvery(eventName: Swift.String, eventToken: Swift.String)
+  public func logLoginDay()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class EventReportManager {
+  public static let shared: GrowingIO.EventReportManager
+  public func initManager(_ callback: any GrowingIO.GameProtocol)
+  public func logEvent(_ eventName: Swift.String)
+  public func beijing_logAd(_ eventName: Swift.String, _ ad: AppLovinSDK.MAAd, _ scene: Swift.String, _ uuid: Swift.String)
+  public func beijing_logAdError(_ eventName: Swift.String, _ error: AppLovinSDK.MAError)
+  public func logEvent(_ eventName: Swift.String, _ dict: Swift.Dictionary<Swift.String, Any>?)
+  public func logTAEvent(_ eventName: Swift.String, _ dict: Swift.Dictionary<Swift.String, Any>?)
+  public func logPushEvent(_ eventName: Swift.String, _ data: Swift.String)
+  public func logPushEvent(_ eventName: Swift.String, _ dict: Swift.Dictionary<Swift.String, Any>?)
+  @objc deinit
+}
+@objc extension Foundation.NSAttributedString {
+  @objc dynamic public var rangeSubAttStringDic: [Swift.String : Foundation.NSAttributedString] {
+    @objc get
+  }
+  @objc public static func paraDict(_ font: GrowingIO.Font = Font.systemFont(ofSize:15), textColor: GrowingIO.Color = .blue, alignment: UIKit.NSTextAlignment = .left, lineSpacing: CoreFoundation.CGFloat = 0, lineBreakMode: UIKit.NSLineBreakMode = .byWordWrapping) -> [Foundation.NSAttributedString.Key : Any]
+  @objc public static func create(_ text: Swift.String, textTaps: [Swift.String], font: GrowingIO.Font = Font.systemFont(ofSize: 15), tapFont: GrowingIO.Font = Font.systemFont(ofSize: 15), color: GrowingIO.Color = .black, tapColor: GrowingIO.Color = .lightText, alignment: UIKit.NSTextAlignment = .center, lineSpacing: CoreFoundation.CGFloat = 0, lineBreakMode: UIKit.NSLineBreakMode = .byWordWrapping, rangeOptions mask: Foundation.NSString.CompareOptions = []) -> Foundation.NSAttributedString
+  @objc public static func createLink(_ text: Swift.String, dic: [Swift.String : Swift.String], font: GrowingIO.Font) -> Foundation.NSMutableAttributedString
+  @objc public static func attString(_ text: Swift.String, nsRange: Foundation.NSRange, font: GrowingIO.Font = Font.systemFont(ofSize: 15), tapColor: GrowingIO.Color = .blue) -> Foundation.NSAttributedString
+  @objc dynamic public func size(with width: CoreFoundation.CGFloat) -> CoreFoundation.CGSize
+}
+extension Foundation.NSAttributedString {
+  convenience public init(data: Foundation.Data, documentType: Foundation.NSAttributedString.DocumentType, encoding: Swift.String.Encoding = .utf8) throws
+  convenience public init(html data: Foundation.Data) throws
+  convenience public init(txt data: Foundation.Data) throws
+  convenience public init(rtf data: Foundation.Data) throws
+  convenience public init(rtfd data: Foundation.Data) throws
+  public func attributes(at index: Swift.Int) -> (Foundation.NSRange, [Foundation.NSAttributedString.Key : Any])
+}
+extension Foundation.NSAttributedString {
+  public static func + (lhs: Foundation.NSAttributedString, rhs: Foundation.NSAttributedString) -> Foundation.NSAttributedString
+  public static func += (lhs: inout Foundation.NSAttributedString, rhs: Foundation.NSAttributedString)
+  public static func + (lhs: Foundation.NSAttributedString, rhs: Swift.String) -> Foundation.NSAttributedString
+  public static func += (lhs: inout Foundation.NSAttributedString, rhs: Swift.String)
+}
+extension Foundation.NSMutableAttributedString {
+  public subscript(index: ObjectiveC.NSInteger) -> Foundation.NSAttributedString? {
+    get
+    set
+  }
+}
+extension Swift.String {
+  public var matt: Foundation.NSMutableAttributedString {
+    get
+  }
+}
+@objc extension Foundation.NSAttributedString {
+  @objc dynamic public var matt: Foundation.NSMutableAttributedString {
+    @objc get
+  }
+}
+@objc extension Foundation.NSMutableAttributedString {
+  @objc dynamic public func fontChain(_ font: GrowingIO.Font) -> Self
+  @objc dynamic public func systemFontChain(_ fontSize: CoreFoundation.CGFloat = 17, weight: GrowingIO.Font.Weight = .regular) -> Self
+  @objc dynamic public func foregroundColorChain(_ color: GrowingIO.Color) -> Self
+  @objc dynamic public func backgroundColorChain(_ color: GrowingIO.Color) -> Self
+  @objc dynamic public func linkChain(_ value: Swift.String) -> Self
+  @objc dynamic public func linkURLChain(_ value: Foundation.URL) -> Self
+  @objc dynamic public func obliqueChain(_ value: CoreFoundation.CGFloat = 0.1) -> Self
+  @objc dynamic public func kernChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func expansionChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func underlineChain(_ style: UIKit.NSUnderlineStyle = .single, _ color: GrowingIO.Color) -> Self
+  @objc dynamic public func strikethroughChain(_ style: UIKit.NSUnderlineStyle = .single, _ color: GrowingIO.Color) -> Self
+  @objc dynamic public func strokeChain(_ color: GrowingIO.Color, _ value: CoreFoundation.CGFloat = 0) -> Self
+  @objc dynamic public func baselineChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func paraStyleChain(_ alignment: UIKit.NSTextAlignment, lineSpacing: CoreFoundation.CGFloat = 0, paragraphSpacingBefore: CoreFoundation.CGFloat = 0, lineBreakMode: UIKit.NSLineBreakMode = .byTruncatingTail) -> Self
+  @objc dynamic public func paragraphStyleChain(_ style: UIKit.NSMutableParagraphStyle) -> Self
+  @objc dynamic public func textAttachmentChain(_ image: GrowingIO.Image, scale: CoreFoundation.CGFloat = 1.0) -> Self
+}
+@objc extension UIKit.NSMutableParagraphStyle {
+  @objc dynamic public func lineSpacingChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func paragraphSpacingChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func alignmentChain(_ value: UIKit.NSTextAlignment) -> Self
+  @objc dynamic public func firstLineHeadIndentChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func headIndentChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func tailIndentChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func lineBreakModeChain(_ value: UIKit.NSLineBreakMode) -> Self
+  @objc dynamic public func minimumLineHeightChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func maximumLineHeightChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func baseWritingDirectionChain(_ value: UIKit.NSWritingDirection) -> Self
+  @objc dynamic public func lineHeightMultipleChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func paragraphSpacingBeforeChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func hyphenationFactorChain(_ value: Swift.Float) -> Self
+  @objc dynamic public func tabStopsChain(_ value: [UIKit.NSTextTab]) -> Self
+  @objc dynamic public func defaultTabIntervalChain(_ value: CoreFoundation.CGFloat) -> Self
+  @objc dynamic public func allowsDefaultTighteningForTruncationChain(_ value: Swift.Bool) -> Self
+  @objc dynamic public func lineBreakStrategyChain(_ value: UIKit.NSParagraphStyle.LineBreakStrategy) -> Self
+  @objc dynamic public func addTabStopChain(_ value: UIKit.NSTextTab) -> Self
+  @objc dynamic public func removeTabStopChain(_ value: UIKit.NSTextTab) -> Self
+  @objc dynamic public func setParagraphStyleChain(_ value: UIKit.NSParagraphStyle) -> Self
+}
+@objc public protocol GameProtocol {
+  @objc func sdk2Game(_ funcName: Swift.String, _ param: Swift.String)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class GameLink : ObjectiveC.NSObject, AdjustSdk.AdjustDelegate {
+  @objc public static let shared: GrowingIO.GameLink
+  @objc override dynamic public func copy() -> Any
+  @objc override dynamic public func mutableCopy() -> Any
+  @objc public func initGameLink(controller: UIKit.UIViewController)
+  @objc public func addGameProtocol(_ callback: any GrowingIO.GameProtocol)
+  @objc public func showAlertAgreement()
+  @objc public func showADDebug()
+  @objc public func hasBanner() -> Swift.Bool
+  @objc public func zsBanner(_ json: Swift.String)
+  @objc public func ycBanner()
+  @objc public func interADIsReady(_ inter: Swift.String) -> Swift.Bool
+  @objc public func showInterAD(_ inter: Swift.String)
+  @objc public func videoADIsReady(_ video: Swift.String) -> Swift.Bool
+  @objc public func showVideoAD(_ video: Swift.String)
+  @objc public func reportEventEmptyParam(_ eventName: Swift.String)
+  @objc public func reportEventSingleParam(_ eventName: Swift.String, _ value: Swift.String)
+  @objc public func reportEventMultiParam(_ eventName: Swift.String, _ json: Swift.String)
+  @objc public func reportException(_ title: Swift.String, _ msg: Swift.String)
+  @objc public func showGameLog(_ content: Swift.String, _ tag: Swift.String = "")
+  @objc public func writeReview()
+  @objc public func startPay(_ info: Swift.String)
+  @objc public func queryIncomplete()
+  @objc public func purchaseComplete(_ info: Swift.String)
+  @objc public func questionAndServe()
+  @objc public func taAccountInfo(_ info: Swift.String)
+  @objc public func saveUserInfo(_ info: Swift.String)
+  @objc public func getUserInfo()
+  @objc public func userLoginStatus(_ loginType: Swift.Int) -> Swift.Bool
+  @objc public func logout(_ loginType: Swift.Int)
+  @objc public func loginByApple()
+  @objc public func loginByGG()
+  @objc public func loginByFB()
+  @objc public func getRank(_ info: Swift.String)
+  @objc deinit
+}
+extension GrowingIO.GameLink {
+  @objc dynamic public func application(_ debug: Swift.Bool, _ application: UIKit.UIApplication, didFinishLaunchingWithOptions launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?) -> Swift.Bool
+  @objc dynamic public func applicationDidBecomeActive(_ application: UIKit.UIApplication)
+  @objc dynamic public func application(_ app: UIKit.UIApplication, open url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any]) -> Swift.Bool
+  @objc dynamic public func application(_ application: UIKit.UIApplication, continue userActivity: Foundation.NSUserActivity, restorationHandler: @escaping ([any UIKit.UIUserActivityRestoring]?) -> Swift.Void) -> Swift.Bool
+}
+extension GrowingIO.GameLink {
+  public func adjustDidLaunch()
+  @objc dynamic public func adjustAttributionChanged(_ attribution: AdjustSdk.ADJAttribution?)
+}
+@_hasMissingDesignatedInitializers public class LogTools {
+  public static var debug: Swift.Bool
+  public static func log(_ content: Any?, _ flag: Swift.String = "")
+  @objc deinit
+}

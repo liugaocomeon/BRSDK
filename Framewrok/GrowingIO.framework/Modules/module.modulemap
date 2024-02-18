@@ -1,0 +1,11 @@
+framework module GrowingIO {
+  umbrella header "GrowingIO.h"
+  export *
+
+  module * { export * }
+}
+
+module GrowingIO.Swift {
+  header "GrowingIO-Swift.h"
+  requires objc
+}
